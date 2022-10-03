@@ -13,7 +13,7 @@ var ctx = canvasElement.getContext('2d');
 canvasElement.id = 'myViz';
 document.body.appendChild(canvasElement);
 
-function drawViz(data){
+function drawVuiz(data){
   // clear the canvas
   var ctx = canvasElement.getContext('2d');
   ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
