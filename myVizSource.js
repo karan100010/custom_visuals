@@ -18,7 +18,8 @@ function drawViz(data) {
     const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
     rect.setAttribute('width', `${width/2}px`);
     rect.setAttribute('height', `${height/2}px`);
-    rect.style.fill =  'blue';
+    //if hight more the 10 then color is red
+    rect.style.fill =  data.tables.DEFAULT[0].height > 10 ? 'red' : 'blue';
   
     svg.append(rect);
   
@@ -26,4 +27,11 @@ function drawViz(data) {
   }
   // subscribe to data and style changes
   dscc.subscribeToData(drawViz, { transform: dscc.objectTransform });
+
+  //change the disable property 
+  $(document).ready(function(){
+    $("#disable").click(function(){
+      $("#disable").prop("disabled", true);
+    });
+  }
   
